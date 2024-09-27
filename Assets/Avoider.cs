@@ -6,6 +6,8 @@ using UnityEngine;
 public class Avoider : MonoBehaviour
 {
     [SerializeField]
+    bool showGizmo = true;
+    [SerializeField]
     Transform targetToAvoid;
     [SerializeField]
     float distanceWhenToAvoid;
@@ -27,19 +29,22 @@ public class Avoider : MonoBehaviour
         if (LineOfSightCheck(this.transform.position))
         {
 
-            //var points= localPoissonPoints.ToList().Select(e=>LineOfSightCheck(this.transform.TransformPoint(e)));
-            foreach (var point in localPoissonPoints)
+            if (showGizmo == true)
             {
-               
-                if (!LineOfSightCheck(this.transform.TransformPoint(point)))
+                //var points= localPoissonPoints.ToList().Select(e=>LineOfSightCheck(this.transform.TransformPoint(e)));
+                foreach (var point in localPoissonPoints)
                 {
-                    Debug.DrawLine(this.transform.position, this.transform.TransformPoint(point), Color.green);
+
+                    if (!LineOfSightCheck(this.transform.TransformPoint(point)))
+                    {
+                        Debug.DrawLine(this.transform.position, this.transform.TransformPoint(point), Color.green);
+                    }
+                    else
+                    {
+                        Debug.DrawLine(this.transform.position, this.transform.TransformPoint(point), Color.red);
+                    }
+
                 }
-                else
-                {
-                    Debug.DrawLine(this.transform.position, this.transform.TransformPoint(point), Color.red);
-                }
-               
             }
 
 
