@@ -538,6 +538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Avoider
       objectReference: {fileID: 0}
+    - target: {fileID: 4861795173006018731, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7053373115377303428, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.01
