@@ -548,7 +548,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7053373115377303428, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.01
+      value: -4.44
       objectReference: {fileID: 0}
     - target: {fileID: 7053373115377303428, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       propertyPath: m_LocalPosition.y
@@ -556,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7053373115377303428, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 8.48
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 7053373115377303428, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       propertyPath: m_LocalRotation.w
@@ -592,10 +592,10 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 654589847165876789, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1070554454}
+      addedObject: {fileID: 1070554455}
     - targetCorrespondingSourceObject: {fileID: 654589847165876789, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1070554455}
+      addedObject: {fileID: 1070554456}
   m_SourcePrefab: {fileID: 100100000, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
 --- !u!1 &963194225
 GameObject:
@@ -694,24 +694,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 654589847165876789, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
   m_PrefabInstance: {fileID: 779256973}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1070554454
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070554449}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cf71a1d8a8ffb3428fe4a916eb898df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  showGizmo: 1
-  targetToAvoid: {fileID: 1972147851}
-  range: 100
-  speed: 3.5
-  poissonDiscHeight: 30
-  poissonDiscWidth: 30
 --- !u!136 &1070554455
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -735,14 +717,27 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1070554456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1070554449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -913444275, guid: 9ebce7dd77b21524ca6de203794ae0c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showGizmo: 1
+  targetToAvoid: {fileID: 1972147859}
+  range: 20
+  speed: 3
+  poissonDiscHeight: 20
+  poissonDiscWidth: 20
 --- !u!1 &1972147848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5144588902603095314, guid: 2f2c1ebc5ec6a5443bc23c9933782a9b, type: 3}
-  m_PrefabInstance: {fileID: 287997806}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1972147851 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8281743440266370689, guid: 2f2c1ebc5ec6a5443bc23c9933782a9b, type: 3}
   m_PrefabInstance: {fileID: 287997806}
   m_PrefabAsset: {fileID: 0}
 --- !u!136 &1972147852
@@ -808,6 +803,11 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1972147859 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8281743440266370689, guid: 2f2c1ebc5ec6a5443bc23c9933782a9b, type: 3}
+  m_PrefabInstance: {fileID: 287997806}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
