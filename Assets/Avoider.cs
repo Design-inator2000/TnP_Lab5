@@ -7,12 +7,16 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Avoider : MonoBehaviour
 {
+    NavMeshAgent navAgent;
+
     [SerializeField]
     bool showGizmo = true;
     [SerializeField]
     Transform targetToAvoid;
     [SerializeField]
-    float distanceWhenToAvoid;
+    float range;
+    [SerializeField]
+    float speed;
     [SerializeField]
     float poissonDiscHeight, poissonDiscWidth;
     List<Vector3> localPoissonPoints=new List<Vector3>();
@@ -22,11 +26,13 @@ public class Avoider : MonoBehaviour
     {
         PoissonGenerator();
 
+        navAgent = this.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        navAgent.speed = speed;
 
         if (LineOfSightCheck(this.transform.position))
         {
@@ -61,7 +67,7 @@ public class Avoider : MonoBehaviour
         direction = direction.normalized;
         Ray ray = new Ray(startPosition, direction);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, distanceWhenToAvoid) && hit.collider.transform == targetToAvoid)
+        if (Physics.Raycast(ray, out hit, range) && hit.collider.transform == targetToAvoid)
         {
 
             return true;
