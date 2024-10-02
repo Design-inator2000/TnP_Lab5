@@ -32,6 +32,8 @@ public class Avoider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        List<Vector3> safePoints = new List<Vector3>();
+
         navAgent.speed = speed;
 
         if (LineOfSightCheck(this.transform.position))
@@ -46,6 +48,7 @@ public class Avoider : MonoBehaviour
                     if (!LineOfSightCheck(this.transform.TransformPoint(point)))
                     {
                         Debug.DrawLine(this.transform.position, this.transform.TransformPoint(point), Color.green);
+                        safePoints.Add(this.transform.TransformPoint(point));
                     }
                     else
                     {
@@ -55,7 +58,18 @@ public class Avoider : MonoBehaviour
                 }
             }
 
+            Vector3 closestPoint = safePoints[0];
 
+            foreach (var point in safePoints)
+            {
+                if (Vector3.Distance(point, this.transform.position) < Vector3.Distance(closestPoint, this.transform.position))
+                {
+                    closestPoint = point;
+                }
+            }
+
+            navAgent.SetDestination(closestPoint);
+            Debug.Log(closestPoint);
         }
         
     }

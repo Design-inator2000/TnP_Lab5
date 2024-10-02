@@ -539,6 +539,10 @@ PrefabInstance:
       value: Avoider
       objectReference: {fileID: 0}
     - target: {fileID: 4861795173006018731, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861795173006018731, guid: 4b782086c450aff4f96d6c9120d5d510, type: 3}
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
@@ -704,7 +708,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   showGizmo: 1
   targetToAvoid: {fileID: 1972147851}
-  distanceWhenToAvoid: 100
+  range: 100
+  speed: 3.5
   poissonDiscHeight: 30
   poissonDiscWidth: 30
 --- !u!136 &1070554455
